@@ -7,6 +7,15 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+
+# Declarar argumentos de construcción para capturar las variables de Railway
+ARG VITE_SUPABASE_URL
+ARG VITE_SUPABASE_ANON_KEY
+
+# Establecerlas como variables de entorno para que el build las vea
+ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
+ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
+
 RUN npm run build
 
 # Etapa de producción
