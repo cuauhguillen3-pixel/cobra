@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-gray-100;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-lg font-semibold transition select-none focus:outline-none;
+  }
+  .btn-mobile {
+    @apply h-10 px-3 text-sm;
+  }
+  .btn-icon {
+    @apply h-10 w-10 p-0 rounded-full;
+  }
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  .btn-ghost {
+    @apply bg-gray-700 text-white hover:bg-gray-600;
+  }
+
+  .input-base {
+    @apply w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent;
+  }
+  .input-mobile {
+    @apply h-10 px-3 text-sm;
+  }
+
+  .card-mobile {
+    @apply rounded-lg p-4 shadow-md;
+  }
+  .text-title {
+    @apply text-2xl sm:text-3xl font-bold;
+  }
+  .text-subtitle {
+    @apply text-sm sm:text-base text-gray-400;
+  }
+  .text-label {
+    @apply text-xs sm:text-sm text-gray-400;
+  }
+  .text-metric {
+    @apply text-base sm:text-lg font-bold;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #111827;
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #111827;
+  }
+}
